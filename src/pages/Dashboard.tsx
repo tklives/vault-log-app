@@ -28,7 +28,7 @@ export default function Dashboard() {
       <h1 className="text-2xl font-bold">Dashboard</h1>
 
       <div>
-        <h2 className="text-xl font-semibold">Next 3 Meets</h2>
+        <h2 className="text-xl font-semibold">Next 3ish Meets</h2>
         {upcomingMeets.length === 0 ? (
           <p className="text-zinc-500">No upcoming meets scheduled.</p>
         ) : (
