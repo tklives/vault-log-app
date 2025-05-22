@@ -21,13 +21,14 @@ export default function Meets() {
   const handleSave = async (data: Omit<Meet, 'id' | 'createdAt' | 'athleteIds'>, id?: string) => {
     const meetId = id ?? crypto.randomUUID();
 
+    const existing = meets.find((m) => m.id === id);
     const meet: Meet = {
       ...data,
       id: meetId,
       createdAt: id
         ? meets.find(m => m.id === id)?.createdAt ?? new Date().toISOString()
         : new Date().toISOString(),
-      athleteIds: [],
+      athleteIds: existing?.athleteIds ?? [], // 👈 preserve athletes
     };
 
     if (id) {
