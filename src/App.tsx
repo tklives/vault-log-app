@@ -5,8 +5,14 @@ import Athletes from './pages/Athletes';
 import Poles from './pages/Poles';
 import Meets from './pages/Meets';
 import Settings from './pages/Settings';
+import MeetDetail from './pages/MeetDetail';
+import FirebaseTest from './pages/FirebaseTest';
+import DevTools from './components/dev/DevTools';
+import { useSyncEffect } from './hooks/useSyncEffect';
 
 export default function App() {
+  useSyncEffect();
+
   return (
     <div className="min-h-screen bg-white text-zinc-900">
       <TopNav />
@@ -16,9 +22,12 @@ export default function App() {
           <Route path="/athletes" element={<Athletes />} />
           <Route path="/poles" element={<Poles />} />
           <Route path="/meets" element={<Meets />} />
+          <Route path="/meet/:id" element={<MeetDetail />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/firebase-test" element={<FirebaseTest />} />
         </Routes>
       </div>
+      <DevTools />
     </div>
   );
 }
