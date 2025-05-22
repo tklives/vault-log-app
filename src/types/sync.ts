@@ -5,3 +5,13 @@ export interface SyncQueueItem {
   payload: any; // the object you're syncing
   timestamp: number;
 }
+
+export interface Meet {
+  id: string;
+  name: string;
+  date: string; // ISO date string
+  type?: string;
+  createdAt?: string;
+  athleteIds?: string[];
+  genderGrouping?: 'combined' | 'separate';
+}
